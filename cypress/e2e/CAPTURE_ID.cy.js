@@ -26,7 +26,7 @@ describe('get api user test', () => {
             expect(response.body).has.property('status', dataJson.status) 
         }).then((response) => {
             const userID = response.body.id
-            cy.log("user id is" + '@idk')
+            cy.log("user id is" + userID)
             cy.request({
                 method : 'GET',
                 url : 'https://gorest.co.in/public/v2/users/' + userID,
