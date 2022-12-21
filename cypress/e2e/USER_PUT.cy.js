@@ -1,7 +1,7 @@
 const { email } = require('../support/Faker');
 const dataJson = require('../fixtures/MyBody');
 
-describe('get api user test', () => {
+describe('PUT api user test', () => {
     let accesToken = '72e78981270b629bd33b2bd5dcb2503d8ba161df413eddc6434c2d90fcbbda8d'
     it('get users', () => {
          cy.request({

@@ -17,12 +17,25 @@ describe('POST api user test', () => {
                 "status": dataJson.status
             } 
          }).then((response)=>{
-            cy.log(JSON.stringify(response))
+            
             expect(response.status).to.eq(201)
             expect(response.body).has.property('email', email)
             expect(response.body).has.property('name', dataJson.name)
             expect(response.body).has.property('gender', dataJson.gender)
             expect(response.body).has.property('status', dataJson.status)
-         })
+         }).then((response) => {
+            const userIDd = response.body.id
+            cy.log("user id is" + userIDd)
+            cy.request({
+                method : 'DELETE',
+                url : 'https://gorest.co.in/public/v2/users/' + userIDd,
+                headers : {
+                    'Authorization' : 'Bearer ' + accesToken
+                }
+            }).then((response) =>{
+                expect(response.status).to.eq(204)
+                expect(response.body).to.eq('')
+            })     
+         }) 
     });
 });

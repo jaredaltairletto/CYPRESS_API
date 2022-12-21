@@ -1,6 +1,6 @@
 describe('get api user test', () => {
     let accesToken = '72e78981270b629bd33b2bd5dcb2503d8ba161df413eddc6434c2d90fcbbda8d'
-    it('get users', () => {
+    it('GET ALL && CHECK THE IDS`S', () => {
          cy.request({
             method : 'GET',
             url : 'https://gorest.co.in/public/v2/users',
