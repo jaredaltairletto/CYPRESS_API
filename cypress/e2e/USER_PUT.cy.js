@@ -27,7 +27,7 @@ describe('PUT api user test', () => {
             })
             .then((response)=>{
             expect(response.status).to.eq(200)
-            expect(response.body).to.have.property('name', 'UPDATED_USER') 
+            expect(response.body).to.have.property("gender", dataJson.gender) 
             })
          })
     });
